@@ -18,12 +18,17 @@ body {
   line-height: 1.5;
   background-color: $body-bg;
   color: $txt-color;
+  font-size: 16rem;
 }
 
 img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: $txt-color;
+}
 // mark {
 //   color: $main-color;
 //   background-color: transparent;
