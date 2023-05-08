@@ -20,6 +20,11 @@
     background-color: $white;
     border-radius: 15px;
 
+    @include mobile {
+      margin: 0;
+      border-radius: 0;
+      padding: 20px;
+    }
   }
 
   &__header {
@@ -31,9 +36,17 @@
     &-left {
       display: flex;
       gap: 10px;
+
+      @include mobile {
+        gap: 5px;
+      }
       .title {
         font-size: 24rem;
         font-weight: 800;
+
+        @include mobile {
+          font-size: 20rem;
+        }
       }
       .account {
         display: flex;
@@ -46,6 +59,12 @@
         width: 35px;
         line-height: 0;
         border-radius: 5px;
+
+        @include mobile {
+          font-size: 16rem;
+          height: 25px;
+          width: 30px;
+        }
       }
     }
     &-right {
@@ -54,6 +73,11 @@
         border: none;
         font-size: 18rem;
         color: $dark-grayish-blue;
+
+        @include mobile {
+          font-size: 16rem;
+        }
+
         &:hover {
           cursor: pointer;
           color: $main-color;
@@ -76,6 +100,10 @@
     padding: 15px;
     border-radius: 10px;
 
+    @include mobile {
+      padding: 10px;
+    }
+
     &.unread {
       background-color: $light-grayish-blue-1;
     }
@@ -89,14 +117,26 @@
     &-message {
       display: flex;
       gap: 20px;
+
+      @include mobile {
+        gap: 10px;
+      }
       .picture {
         height: 50px;
         border-radius: 50%;
+
+        @include mobile {
+          height: 40px;
+        }
       }
     }
 
     &-text {
       color: $dark-grayish-blue;
+
+      @include mobile {
+        font-size: 14rem;
+      }
 
       .name {
         color: $black;
@@ -122,11 +162,20 @@
         display: inline-block;
         background-color: $red;
         border-radius: 50%;
+
+        @include mobile {
+          width: 8px;
+          height: 8px;
+        }
       }
     }
 
     &-time {
       color: $grayish-blue;
+
+      @include mobile {
+        font-size: 14rem;
+      }
     }
 
     &-extra {
@@ -138,6 +187,13 @@
         padding: 15px;
         border: 1px solid $light-grayish-blue-2;
         border-radius: 7px;
+
+        @include mobile {
+          margin-top: 10px;
+          margin-left: 50px;
+          padding: 10px;
+          font-size: 14rem;
+        }
 
         &:hover{
           cursor: pointer;
@@ -153,6 +209,10 @@
         img {
           height: 50px;
           border-radius: 2%;
+
+          @include mobile {
+            height: 40px;
+          }
         }
       }
     }
