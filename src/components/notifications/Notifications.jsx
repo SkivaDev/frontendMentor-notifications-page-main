@@ -24,7 +24,7 @@ function Notifications() {
           </div>
         </div>
         <div className="notifications__items">
-          <div className="notifications__item">
+          <div className="notifications__item unread">
             <div className="notifications__item-message">
               <img src={userIconOne} alt="" className="picture" />
               <div className="notification__item-info">
@@ -40,7 +40,7 @@ function Notifications() {
               </div>
             </div>
           </div>
-          <div className="notifications__item">
+          <div className="notifications__item unread">
             <div className="notifications__item-message">
               <img src={userIconTwo} alt="" className="picture" />
               <div className="notification__item-info">
@@ -53,7 +53,7 @@ function Notifications() {
               </div>
             </div>
           </div>
-          <div className="notifications__item">
+          <div className="notifications__item unread">
             <div className="notifications__item-message">
               <img src={userIconThree} alt="" className="picture" />
               <div className="notification__item-info">
@@ -81,16 +81,16 @@ function Notifications() {
               </div>
             </div>
             <div className="notifications__item-extra">
-              <div className="message">
+              <a className="message" href="#">
                 <p className="text">
                   Hello, thanks for setting up the Chess Club. I've been a member
                   for a few weeks now and I'm already having lots of fun and
                   improving my game.
                 </p>
-              </div>
+              </a>
             </div>
           </div>
-          <div className="notifications__item">
+          <div className="notifications__item flex">
             <div className="notifications__item-message">
               <img src={userIconFive} alt="" className="picture" />
               <div className="notification__item-info">
@@ -101,7 +101,7 @@ function Notifications() {
                 <p className="notifications__item-time">1 weeks ago</p>
               </div>
             </div>
-            <div className="notifications__item-extra picture">
+            <div className="notifications__item-extra">
               <div className="picture">
                 <img src={chessPicture} alt="chessPicture" />
               </div>
