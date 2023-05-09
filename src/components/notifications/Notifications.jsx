@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import chessPicture from "../../assets/images/image-chess.webp";
 import userIconOne from "../../assets/images/avatar-mark-webber.webp";
 import userIconTwo from "../../assets/images/avatar-angela-gray.webp";
@@ -11,20 +11,56 @@ import userIconSeven from "../../assets/images/avatar-anna-kim.webp";
 import "./notifications.scss";
 
 function Notifications() {
+
+  const [totalNotifications, setTotalNotifications] = useState(3);
+  const [isReadOne, setIsReadOne] = useState(false);
+  const [isReadTwo, setIsReadTwo] = useState(false);
+  const [isReadThree, setIsReadThree] = useState(false);
+
+  const handleMarkAllAsRead = () => {
+    setTotalNotifications(0);
+    setIsReadOne(true);
+    setIsReadTwo(true);
+    setIsReadThree(true);
+  }
+
+  const handleMarkAsRead = (id) => {
+
+    if (totalNotifications === 0) {
+      return;
+    }
+
+    setTotalNotifications(totalNotifications - 1);
+
+    switch (id) {
+      case 1:
+        setIsReadOne(true);
+        break;
+      case 2:
+        setIsReadTwo(true);
+        break;
+      case 3:
+        setIsReadThree(true);
+        break;
+      default:
+        break;
+    }
+  }
+
   return (
     <section className="notifications">
       <div className="notifications__container">
         <div className="notifications__header">
           <div className="notifications__header-left">
             <h1 className="title">Notifications</h1>
-            <div className="account">3</div>
+            <div className="account">{totalNotifications}</div>
           </div>
           <div className="notifications__header-right">
-            <button className="btn">Mark all as read</button>
+            <button className="btn" onClick={handleMarkAllAsRead}>Mark all as read</button>
           </div>
         </div>
         <div className="notifications__items">
-          <div className="notifications__item unread">
+          <div className={`notifications__item ${isReadOne ? '' : 'unread'}`} onClick={() => handleMarkAsRead(1)}>
             <div className="notifications__item-message">
               <img src={userIconOne} alt="" className="picture" />
               <div className="notification__item-info">
@@ -40,7 +76,7 @@ function Notifications() {
               </div>
             </div>
           </div>
-          <div className="notifications__item unread">
+          <div className={`notifications__item ${isReadTwo ? '' : 'unread'}`} onClick={() => handleMarkAsRead(2)}>
             <div className="notifications__item-message">
               <img src={userIconTwo} alt="" className="picture" />
               <div className="notification__item-info">
@@ -53,7 +89,7 @@ function Notifications() {
               </div>
             </div>
           </div>
-          <div className="notifications__item unread">
+          <div className={`notifications__item ${isReadThree ? '' : 'unread'}`} onClick={() => handleMarkAsRead(3)}>
             <div className="notifications__item-message">
               <img src={userIconThree} alt="" className="picture" />
               <div className="notification__item-info">
